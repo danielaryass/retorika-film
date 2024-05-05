@@ -1,0 +1,29 @@
+export default function IconShortMovies() {
+  return (
+    <svg
+      width="60"
+      height="60"
+      viewBox="0 0 60 60"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="60" height="60" rx="8" fill="#4E4E4E" fillOpacity="0.08" />
+      <g clipPath="url(#clip0_208_1378)">
+        <path
+          d="M40 16.6666L43.3333 23.3333H38.3333L35 16.6666H31.6667L35 23.3333H30L26.6667 16.6666H23.3333L26.6667 23.3333H21.6667L18.3333 16.6666H16.6667C14.825 16.6666 13.35 18.1583 13.35 20L13.3333 40C13.3333 41.8416 14.825 43.3333 16.6667 43.3333H43.3333C45.175 43.3333 46.6667 41.8416 46.6667 40V16.6666H40Z"
+          fill="#040404"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_208_1378">
+          <rect
+            width="40"
+            height="40"
+            fill="white"
+            transform="translate(10 10)"
+          />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+}
