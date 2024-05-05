@@ -13,7 +13,10 @@ export default function AboutUs() {
     { image: aboutUs4, alt: "About Us 4" },
   ];
   return (
-    <section className=" px-8 md:px-16 py-3 flex flex-col md:flex-row justify-between gap-16" id="about-us">
+    <section
+      className=" px-8 md:px-16 py-3 flex flex-col md:flex-row justify-between gap-16"
+      id="about-us"
+    >
       <div className="flex flex-col w-full max-w-[475px]">
         <h2 className="text-3xl text-[#4E4E4E] font-medium mb-8">About Us</h2>
         <p className="text-[52px] font-semibold text-black leading-tight mb-6 max-w-[450px]">
@@ -32,14 +35,17 @@ export default function AboutUs() {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {aboutUs.map((item, index) => (
-          <Image
-            key={index}
-            src={item.image}
-            alt={item.alt}
-            width={400}
-            height={600}
-            className="w-full h-auto aspect-[36/28] rounded-xl object-cover"
-          />
+          <div className="aspect-[36/28] rounded-xl overflow-hidden w-full h-auto"
+          key={index}
+          >
+            <Image
+              src={item.image}
+              alt={item.alt}
+              width={400}
+              height={600}
+              className="w-full h-full  object-cover"
+            />
+          </div>
         ))}
       </div>
     </section>
