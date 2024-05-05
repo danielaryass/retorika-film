@@ -39,9 +39,9 @@ export default function WhyUs() {
               Collaboration <br /> Centered
             </p>
             <p className="text-[#4E4E4E]">
-              We prioritize collaborative to meet clients' expectations and
-              satisfaction.
-            </p>
+  We prioritize collaborative to meet client&apos;s expectations and
+  satisfaction.
+</p>
           </div>
         </div>
         <div className="flex  gap-4">
