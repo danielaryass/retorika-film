@@ -96,7 +96,7 @@ export default function HeroSection() {
   }, [heroActive]);
   return (
     <div className="px-4 pt-24 md:pt-28 pb-2 md:aspect-video w-full h-[750px] lg:h-auto ">
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         <motion.div
           className="h-full w-full  rounded-[32px]  relative  bg-black "
           key={heroActive}
