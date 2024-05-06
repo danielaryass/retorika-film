@@ -103,7 +103,6 @@ export default function HeroSection() {
           initial={{ opacity: 0.7 }}
           animate={{ opacity: 1 }}
           transition={{ ease: "easeIn", duration: 1 }}
-          
         >
           <HeroItem hero={data[heroActive]} />
           <div className="w-full h-full bg-black/60 z-10 absolute top-0 right-0 rounded-[32px]">
