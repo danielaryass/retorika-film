@@ -1,29 +1,21 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
-import heroImage from "@/public/image 1.jpg";
-import potraitImsak from "@/public/potraitImsak.webp";
-import potraitKromoloe from "@/public/potraitKromoloe.webp";
-import potraitUnderTheTree from "@/public/potraitUnderTheTree.webp";
-import potraitBakekok from "@/public/potraitBakekok.webp";
-import landscapeImsak from "@/public/landscape_poster=Imsak.webp";
-import landscapeKromoloe from "@/public/landscape_poster=Kromoloe.webp";
-import landscapeUnderTheTree from "@/public/landscape_poster=UnderTheTree.webp";
-import landscapeBakekok from "@/public/landscape_poster=Bakekok.webp";
+import Image from "next/image";
 
 import { FaArrowDownLong, FaArrowRightLong, FaPlay } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import HeroItem from "./HeroSection/HeroItem";
 interface Hero {
   title: string;
   desc: string;
-  secondesc: string | null;
-  tagline: string | null;
+  secondesc?: string | null;
+  tagline?: string | null;
   button: string;
   link: string;
   type: string;
-  image: StaticImageData;
-  image_2: StaticImageData | string;
+  image: string;
+  image_2?: string;
 }
 const data: Hero[] = [
   {
@@ -34,7 +26,7 @@ const data: Hero[] = [
     button: "Contact Us",
     link: "/contact",
     type: "hero",
-    image: heroImage,
+    image: "/image 1.jpg",
     image_2: "",
   },
   {
@@ -45,8 +37,8 @@ const data: Hero[] = [
     desc: "Menceritakan seorang perempuan bernama Naura yang akan sahur, ia tinggal sendiri dirumah karena ibunya sedang bekerja keluar kota, Selin teman...",
     button: "Play Now",
     link: "/imsak",
-    image: landscapeImsak,
-    image_2: potraitImsak,
+    image: "/landscape_poster=Imsak.webp",
+    image_2: "/potraitImsak.webp",
   },
   {
     title: "Kromoloe",
@@ -56,8 +48,8 @@ const data: Hero[] = [
     desc: "Seorang pemotor yang hendak pulang dipertemukan dengan peristiwa mistis. Dia bertemu dengan sekelompok orang yang sedang mengatarkan....",
     button: "Play Now",
     link: "/kromoloe",
-    image: landscapeKromoloe,
-    image_2: potraitKromoloe,
+    image: "/landscape_poster=Kromoloe.webp",
+    image_2: "/potraitKromoloe.webp",
   },
   {
     title: "Under The Tree",
@@ -67,8 +59,8 @@ const data: Hero[] = [
     desc: "Tiga remaja yang pergi untuk mendaki gunung Tampomas menemui berbagai hal yang tertuga. Mereka mengalami kejadian aneh setelah melakukan..",
     button: "Play Now",
     link: "/under-the-tree",
-    image: landscapeUnderTheTree,
-    image_2: potraitUnderTheTree,
+    image: "/landscape_poster=UnderTheTree.webp",
+    image_2: "/potraitUnderTheTree.webp",
   },
   {
     title: "Bakekok",
@@ -78,8 +70,8 @@ const data: Hero[] = [
     desc: "Sepulang kerja, seorang wanita menemukan berbagai peristiwa ganjil. terlebih ketika dia berusaha untuk menemui adiknya yang sedang tertidur dengan... ",
     button: "Play Now",
     link: "/bakekok",
-    image: landscapeBakekok,
-    image_2: potraitBakekok,
+    image: "/landscape_poster=Bakekok.webp",
+    image_2: "/potraitBakekok.webp",
   },
 ];
 export default function HeroSection() {
@@ -99,51 +91,36 @@ export default function HeroSection() {
       } else {
         setHeroActive(heroActive + 1);
       }
-    }, 5000);
+    }, 7000);
     return () => clearInterval(interval);
   }, [heroActive]);
   return (
-    <div className="px-4 pt-24 pb-2 md:aspect-video w-full h-[750px] md:h-auto ">
-      <AnimatePresence mode="wait">
-        <div className="h-full w-full  rounded-[32px]  relative bg-black">
-          <motion.div
-            key={heroActive}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 2 }}
-            className="w-full h-full rounded-[32px] overflow-hidden relative"
-          >
-            <Image
-              src={data[heroActive].image}
-              alt="hero"
-              className="w-full h-full object-cover "
-              width={1920}
-              height={1080}
-              priority
-            />
-          </motion.div>
-          <div
-            // key={heroActive}
-            // initial={{ opacity: 0.7 }}
-            // animate={{ opacity: 1 }}
-            // // exit={{ y: -10, opacity: 0 }}
-            // transition={{ duration: 2 }}
-            className="w-full h-full bg-black/60 z-10 absolute top-0 right-0 rounded-[32px]"
-          >
+    <div className="px-4 pt-24 md:pt-28 pb-2 md:aspect-video w-full h-[750px] lg:h-auto ">
+      <AnimatePresence>
+        <motion.div
+          className="h-full w-full  rounded-[32px]  relative  bg-black "
+          key={heroActive}
+          initial={{ opacity: 0.7 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: "easeIn", duration: 1 }}
+          
+        >
+          <HeroItem hero={data[heroActive]} />
+          <div className="w-full h-full bg-black/60 z-10 absolute top-0 right-0 rounded-[32px]">
             <div className="flex flex-col pb-16 gap-6 justify-end md:flex-row md:justify-between md:items-end h-full px-10  relative">
-              <motion.div
-                key={heroActive}
-                initial={{ opacity: 0.4 }}
-                animate={{ opacity: 1 }}
-                // exit={{ opacity: 0 }}
-                transition={{ duration: 2 }}
-                className="space-y-4 md:my-20"
+              <div
+                // key={heroActive}
+                // initial={{ opacity: 0.4 }}
+                // animate={{ opacity: 1 }}
+                // // exit={{ opacity: 0 }}
+                // transition={{ duration: 2 }}
+                className="space-y-4 lg:my-20"
               >
-                <h2 className="text-[32px] md:text-[72px] font-semibold text-white">
+                <h2 className="text-[32px] lg:text-[72px] font-semibold text-white">
                   {data[heroActive].title}
                 </h2>
                 {data[heroActive].type === "showcast" ? null : (
-                  <p className="text-2xl md:text-[32px] text-white ">
+                  <p className="text-2xl lg:text-[32px] text-white ">
                     {data[heroActive].tagline}
                   </p>
                 )}
@@ -157,34 +134,38 @@ export default function HeroSection() {
                   >
                     {data[heroActive].desc}
                   </p>
-                  <Link
+                  <a
                     href={`${data[heroActive].link}`}
                     className="text-white md:text-2xl font-bold"
                   >
                     Read more
-                  </Link>
+                  </a>
                 </div>
-                <button className="mt-10 flex gap-2 px-6 py-4  md:px-8 md:py-5 font-medium  md:text-2xl bg-white rounded-[44px] items-center ">
+                <button
+                  aria-label="Play Now"
+                  className="mt-10 flex gap-2 px-6 py-4  md:px-8 md:py-5 font-medium  md:text-2xl bg-white rounded-[44px] items-center "
+                >
                   <FaPlay /> <span>{data[heroActive].button}</span>
                 </button>
-              </motion.div>
-              {data[heroActive].type != "showcast" ? null : (
-                <motion.div
-                  key={`${heroActive}-1`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  // exit={{ opacity: 0 }}
-                  transition={{ duration: 2 }}
-                  className="hidden md:block absolute h-full  top-0 bottom-0 z-20 right-36 w-auto"
+              </div>
+              {data[heroActive].type != "showcast" ||
+              !data[heroActive].image_2 ? null : (
+                <div
+                  // key={`${heroActive}-1`}
+                  // initial={{ opacity: 0 }}
+                  // animate={{ opacity: 1 }}
+                  // // exit={{ opacity: 0 }}
+                  // transition={{ duration: 2 }}
+                  className="hidden lg:block absolute h-full  top-0 bottom-0 z-20 right-36 w-auto"
                 >
                   <Image
-                    src={data[heroActive].image_2}
+                    src={data[heroActive].image_2 || "/image 1.jpg"}
                     alt="hero"
                     width={700}
                     height={400}
                     className="h-full w-auto object-cover"
                   />
-                </motion.div>
+                </div>
               )}
 
               <div className="flex gap-6 items-center md:bottom-16 md:right-20 z-50 md:absolute">
@@ -193,14 +174,19 @@ export default function HeroSection() {
                     <button
                       key={index}
                       className={`${
-                        heroActive == index ? "w-8 bg-white" : "w-3 bg-gray-300"
-                      } h-3  rounded-full transition-all ease-linear duration-500`}
+                        heroActive == index
+                          ? "w-16 bg-white"
+                          : "w-8 bg-gray-300"
+                      } h-8  rounded-full transition-all ease-linear duration-500`}
                       onClick={() => setHeroActive(index)}
+                      aria-label={`Go to item ${index + 1}`}
+                      aria-current={heroActive == index}
                     ></button>
                   ))}
                 </div>
                 <button
                   className="h-[60px] w-[60px] rounded-full bg-white/40 flex items-center justify-center"
+                  aria-label="Next"
                   onClick={(e) => handleNext(e)}
                 >
                   <FaArrowRightLong size={32} className="text-white" />
@@ -213,7 +199,7 @@ export default function HeroSection() {
             <p className="text-[8px] font-medium">Scroll Down</p>
             <FaArrowDownLong size={24} className="text-black" />
           </div>
-        </div>
+        </motion.div>
       </AnimatePresence>
     </div>
   );

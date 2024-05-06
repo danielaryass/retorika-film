@@ -1,4 +1,4 @@
-export default function GetInTouch() {
+export default async function GetInTouch() {
   return (
     <section className="flex flex-col  px-8 md:px-16 py-3  items-center gap-8 md:gap-12">
       <div className="max-w-[550px] space-y-16">

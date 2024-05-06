@@ -1,8 +1,9 @@
+"use server"
 import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa6";
 import { GiFilmProjector } from "react-icons/gi";
 
-export default function Footer() {
+export default async function Footer() {
   return (
     <footer className="mx-4 md:mx-8 px-4 py-10 md:p-10 my-4 flex flex-col gap-20  items-center bg-black rounded-xl ">
       <div className="w-full flex flex-col md:flex-row gap-12 justify-between">
@@ -12,15 +13,15 @@ export default function Footer() {
             <span className="text-2xl font-medium mt-2">Retorika Film</span>
           </div>
           <div className="text-white text-3xl flex gap-4">
-            <Link href={"/"}>
+            <a href={"/"} aria-label="Instagram">
               <FaInstagram />
-            </Link>
-            <Link href={"/"}>
+            </a>
+            <a href={"/"} aria-label="Youtube">
               <FaYoutube />
-            </Link>
-            <Link href={"/"}>
+            </a>
+            <a href={"/"} aria-label="Linkedin">
               <FaLinkedin />
-            </Link>
+            </a>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-12 text-white">
@@ -36,11 +37,11 @@ export default function Footer() {
       </div>
       <div className="w-full flex flex-col md:flex-row gap-20 justify-between">
         <div className="text-white flex flex-col md:flex-row gap-4">
-          <Link href="#about-us">About</Link>
+          <a href="#about-us">About</a>
           {/* contact, team, blog */}
-          <Link href="#contact">Contact</Link>
-          <Link href="#team">Team</Link>
-          <Link href="#blog">Blog</Link>
+          <a href="#contact">Contact</a>
+          <a href="#team">Team</a>
+          <a href="#blog">Blog</a>
         </div>
         <p className="text-white">Copyright © Retorika Film. All rights reserved.</p>
       </div>

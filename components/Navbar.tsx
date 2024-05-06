@@ -16,17 +16,17 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
   const Menu: Menu[] = [
-    { title: "About Us", link: "#about-us" },
-    { title: "Why Us", link: "#why-us" },
-    { title: "Services", link: "#services" },
-    { title: "Projects", link: "#projects" },
-    { title: "Our Team", link: "#our-team" },
+    { title: "About Us", link: "/#about-us" },
+    { title: "Why Us", link: "/#why-us" },
+    { title: "Services", link: "/#services" },
+    { title: "Projects", link: "/#projects" },
+    { title: "Our Team", link: "/#our-team" },
   ];
 
   return (
     <nav className="fixed top-4 left-6 right-6 bg-white z-20 rounded-full">
       <div className="w-full rounded-full border px-5 md:px-10 py-3 flex justify-between items-center bg-white ">
-        <Link href={"/"} className="flex items-center">
+        <a href={"/#about-us"} className="flex items-center">
           <Image
             src="/WHITE-NEW 1.png"
             alt="logo"
@@ -35,19 +35,19 @@ export default function Navbar() {
             className="mr-3 md:mr-6"
           />
           <p className="font-medium">Retorika Film</p>
-        </Link>
-        <div className="hidden md:flex items-center gap-6">
+        </a>
+        <div className="hidden lg:flex items-center gap-6">
           {Menu.map((menu) => (
-            <Link key={menu.title} href={menu.link}>
+            <a key={menu.title} href={menu.link}>
               {menu.title}
-            </Link>
+            </a>
           ))}
           {/* contact */}
-          <Link className="bg-black text-white px-4 py-2 rounded-full" href="#">
+          <a className="bg-black text-white px-4 py-2 rounded-full" href="#">
             Contact Us
-          </Link>
+          </a>
         </div>
-        <button className="p-1 text-2xl md:hidden" onClick={handleOpen}>
+        <button aria-label="hamburger menu" className="p-1 text-3xl lg:hidden" onClick={handleOpen}>
           <FaBars />
         </button>
 
@@ -60,13 +60,13 @@ export default function Navbar() {
           >
             <div className="bg-white rounded-md flex flex-col m-4 p-4 w-full gap-2">
               {Menu.map((menu) => (
-                <Link
+                <a
                   key={menu.title}
                   href={menu.link}
                   className="flex items-center justify-center py-2"
                 >
                   {menu.title}
-                </Link>
+                </a>
               ))} 
             </div>
           </motion.div>

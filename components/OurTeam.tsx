@@ -8,7 +8,7 @@ interface Team {
   linkedin?: string;
   image: string;
 }
-export default function OurTeams() {
+export default async function OurTeams() {
   const Teams: Team[] = [
     {
       name: "Nabil Surya",

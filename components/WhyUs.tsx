@@ -3,9 +3,12 @@ import IconPro from "./atom/IconPro";
 import IconCollaboration from "./atom/IconCollaboration";
 import IconEfficient from "./atom/IconEfficient";
 
-export default function WhyUs() {
+export default async function WhyUs() {
   return (
-    <section className=" px-8 md:px16 py-3 flex flex-col items-center  gap-8 md:gap-12" id="why-us">
+    <section
+      className=" px-8 md:px-12 py-3 flex flex-col items-center  gap-8 md:gap-12"
+      id="why-us"
+    >
       <div className="flex flex-col gap-4 items-center justify-center">
         <span className="block">
           <GiFilmProjector className="text-[60px]" />
@@ -15,7 +18,7 @@ export default function WhyUs() {
           Your satisfaction is our commitment in every production.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
         <div className="flex  gap-4">
           <div className="">
             <IconPro />
@@ -39,9 +42,9 @@ export default function WhyUs() {
               Collaboration <br /> Centered
             </p>
             <p className="text-[#4E4E4E]">
-  We prioritize collaborative to meet client&apos;s expectations and
-  satisfaction.
-</p>
+              We prioritize collaborative to meet client&apos;s expectations and
+              satisfaction.
+            </p>
           </div>
         </div>
         <div className="flex  gap-4">

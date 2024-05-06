@@ -1,18 +1,14 @@
 "use client";
 import { FaArrowRightLong } from "react-icons/fa6";
-import landscapeImsak from "@/public/landscape_poster=Imsak.png";
-import landscapeKromoloe from "@/public/landscape_poster=Kromoloe.png";
-import landscapeUnderTheTree from "@/public/landscape_poster=UnderTheTree.png";
-import landscapeBakekok from "@/public/landscape_poster=Bakekok.png";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function Projects() {
   const projects = [
-    landscapeImsak,
-    landscapeKromoloe,
-    landscapeUnderTheTree,
-    landscapeBakekok,
+    "/landscape_poster=Imsak.webp",
+    "/landscape_poster=Kromoloe.webp",
+    "/landscape_poster=UnderTheTree.webp",
+    "/landscape_poster=Bakekok.webp",
   ];
   const [selectedShow, setSelectedShow] = useState("Short Movie");
 
@@ -35,7 +31,7 @@ export default function Projects() {
       <div className="max-w-[500px] w-full flex justify-between px-6 ">
         <div
           className={`cursor-pointer text-lg md:text-2xl font-medium relative ${
-            selectedShow == "Short Movie" ? "text-[#4e4e4e]" : "text-[#9b9b9b]"
+            selectedShow == "Short Movie" ? "text-[#4e4e4e]" : "text-gray-400"
           } `}
           onClick={() => setSelectedShow("Short Movie")}
         >
@@ -45,7 +41,7 @@ export default function Projects() {
         </div>
         <div
           className={`cursor-pointer text-lg md:text-2xl font-medium relative ${
-            selectedShow == "Commercial" ? "text-[#4e4e4e]" : "text-[#9b9b9b]"
+            selectedShow == "Commercial" ? "text-[#4e4e4e]" : "text-gray-500"
           } `}
           onClick={() => setSelectedShow("Commercial")}
         >
@@ -64,7 +60,7 @@ export default function Projects() {
               <Image
                 src={project}
                 alt="project"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover aspect-[36/28]"
                 width={360}
                 height={280}
               />

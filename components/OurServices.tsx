@@ -10,7 +10,7 @@ interface Service {
   icon: React.FC;
 }
 
-export default function OurServices() {
+export default async function OurServices() {
   const ourServices: Service[] = [
     {
       title: "Music Videos",
@@ -25,8 +25,8 @@ export default function OurServices() {
     { title: "Short Movies", icon: IconShortMovies },
   ];
   return (
-    <section className=" px-8 md:px16 py-3 grid grid-cols-1 md:grid-cols-2 items-center  gap-8 md:gap-12">
-      <div className="">
+    <section className=" px-8 md:px-12 py-3 grid grid-cols-1 lg:grid-cols-2 items-center  gap-8 md:gap-12">
+      <div className=" md:text-center lg:text-start">
         <h2 className="text-[42px] md:text-[52px] font-semibold">Our Services</h2>
         <p className="text-base md:text-xl text-[#4E4E4E] ">
           We produce various audiovisuals to improve your business and

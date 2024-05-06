@@ -3,13 +3,14 @@ import dynamic from "next/dynamic";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import { Metadata } from "next";
-const AboutUs = dynamic(() => import("@/components/AboutUs"));
-const WhyUs = dynamic(() => import("@/components/WhyUs"));
-const OurServices = dynamic(() => import("@/components/OurServices"));
-const Projects = dynamic(() => import("@/components/Projects"));
-const OurTeams = dynamic(() => import("@/components/OurTeam"));
-const GetInTouch = dynamic(() => import("@/components/GetInTouch"));
-const Footer = dynamic(() => import("@/components/Footer"));
+import GetInTouch from "@/components/GetInTouch";
+import Footer from "@/components/Footer";
+import WhyUs from "@/components/WhyUs";
+import OurServices from "@/components/OurServices";
+import AboutUs from "@/components/AboutUs";
+import OurTeams from "@/components/OurTeam";
+const Projects = dynamic(() => import("@/components/Projects"), { ssr: false });
+
 
 export const metadata: Metadata = {
   title: "Retorika Film",
