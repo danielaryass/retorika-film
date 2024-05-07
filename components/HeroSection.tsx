@@ -94,7 +94,7 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [heroActive]);
   return (
-    <div className="px-4 pt-24 md:pt-28 pb-2 md:aspect-video w-full h-[750px] xl:h-auto ">
+    <div className="px-4 pt-24 md:pt-28 pb-2 md:aspect-video w-full h-screen  ">
       <AnimatePresence mode="wait">
         <motion.div
           className="h-full w-full  rounded-[32px]  relative  bg-black "
@@ -104,7 +104,7 @@ export default function HeroSection() {
           transition={{ ease: "easeIn" }}
         >
           {heroActive === 0 ? (
-            <div className="w-full h-full rounded-[32px] overflow-hidden relative lg:aspect-video lg:h-auto">
+            <div className="w-full h-full rounded-[32px] overflow-hidden relative ">
               <Image
                 src={data[heroActive].image}
                 alt="hero"
