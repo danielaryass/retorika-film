@@ -104,11 +104,11 @@ export default function HeroSection() {
           transition={{ ease: "easeIn" }}
         >
           {heroActive === 0 ? (
-            <div className="w-full h-full rounded-[32px] overflow-hidden relative ">
+            <div className="w-full h-full rounded-[32px] overflow-hidden relative md:aspect-video md:h-full ">
               <Image
                 src={data[heroActive].image}
                 alt="hero"
-                className=" w-full h-full lg:aspect-video lg:h-auto object-cover"
+                className=" w-full h-full md:aspect-video lg:h-auto  object-cover"
                 width={600}
                 height={600}
                 priority
