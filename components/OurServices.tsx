@@ -1,4 +1,3 @@
-import { title } from "process";
 import IconShortMovies from "./atom/IconShortMovies";
 import IconCompanyProfile from "./atom/IconCompanyProfile";
 import IconProductVideos from "./atom/IconProductVideos";

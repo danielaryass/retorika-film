@@ -1,5 +1,4 @@
 "use server"
-import Link from "next/link";
 import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa6";
 import { GiFilmProjector } from "react-icons/gi";
 

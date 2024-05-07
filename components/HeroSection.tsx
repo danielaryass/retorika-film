@@ -4,7 +4,6 @@ import Image from "next/image";
 import { FaArrowDownLong, FaArrowRightLong, FaPlay } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import HeroItem from "./HeroSection/HeroItem";
 interface Hero {
   title: string;
@@ -100,11 +99,24 @@ export default function HeroSection() {
         <motion.div
           className="h-full w-full  rounded-[32px]  relative  bg-black "
           key={heroActive}
-          initial={{ opacity: 0.7 }}
+          initial={{ opacity: 0.8 }}
           animate={{ opacity: 1 }}
-          transition={{ ease: "easeIn", duration: 1 }}
+          transition={{ ease: "easeIn" }}
         >
-          <HeroItem hero={data[heroActive]} />
+          {heroActive === 0 ? (
+            <div className="w-full h-full rounded-[32px] overflow-hidden relative lg:aspect-video lg:h-auto">
+              <Image
+                src={data[heroActive].image}
+                alt="hero"
+                className=" w-full h-full lg:aspect-video lg:h-auto object-cover"
+                width={600}
+                height={600}
+                priority
+              />
+            </div>
+          ) : (
+            <HeroItem hero={data[heroActive]} />
+          )}
           <div className="w-full h-full bg-black/60 z-10 absolute top-0 right-0 rounded-[32px]">
             <div className="flex flex-col pb-16 gap-6 justify-end md:flex-row md:justify-between md:items-end h-full px-10  relative">
               <div
@@ -174,9 +186,9 @@ export default function HeroSection() {
                       key={index}
                       className={`${
                         heroActive == index
-                          ? "w-16 bg-white"
-                          : "w-8 bg-gray-300"
-                      } h-8  rounded-full transition-all ease-linear duration-500`}
+                          ? "w-12 bg-white"
+                          : "w-6 bg-gray-300"
+                      } h-6  rounded-full transition-all ease-linear duration-500`}
                       onClick={() => setHeroActive(index)}
                       aria-label={`Go to item ${index + 1}`}
                       aria-current={heroActive == index}

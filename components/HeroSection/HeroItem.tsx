@@ -17,14 +17,14 @@ interface HeroItemProps {
 
 const HeroItem: React.FC<HeroItemProps> = ({ hero }) => {
   return (
-    <div className="w-full h-full rounded-[32px] overflow-hidden relative md:aspect-video md:h-auto">
+    <div className="w-full h-full rounded-[32px] overflow-hidden relative md:aspect-video md:h-full">
       <Image
         src={hero.image}
         alt="hero"
-        className=" w-full h-full md:aspect-video md:h-auto object-cover"
+        className=" w-full h-full md:aspect-video lg:h-auto  object-cover"
         width={600}
         height={600}
-        priority
+        loading={"eager"}
       />
     </div>
   );
