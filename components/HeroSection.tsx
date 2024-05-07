@@ -108,7 +108,7 @@ export default function HeroSection() {
               <Image
                 src={data[heroActive].image}
                 alt="hero"
-                className=" w-full h-full md:aspect-video lg:h-auto  object-cover"
+                className=" w-full h-screen md:aspect-video  object-cover"
                 width={600}
                 height={600}
                 priority
