@@ -24,7 +24,7 @@ export default function Projects() {
         <p className="text-[#4e4e4e] leading-[1.6] text-center md:text-2xl">
           We believe good quality grows from various experiences.
         </p>
-        <button className="flex bg-black text-white px-6 py-4 rounded-full items-center gap-2 text-xl mt-4">
+        <button className="flex bg-black text-white px-4 py-2 md:px-6 md:py-4 rounded-full items-center gap-2 text-xl mt-4">
           See more <FaArrowRightLong />
         </button>
       </div>

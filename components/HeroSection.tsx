@@ -94,7 +94,7 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [heroActive]);
   return (
-    <div className="px-4 pt-24 md:pt-28 pb-2 md:aspect-video w-full h-[750px] lg:h-auto ">
+    <div className="px-4 pt-24 md:pt-28 pb-2 md:aspect-video w-full h-[750px] xl:h-auto ">
       <AnimatePresence mode="wait">
         <motion.div
           className="h-full w-full  rounded-[32px]  relative  bg-black "

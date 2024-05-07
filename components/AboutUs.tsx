@@ -16,15 +16,15 @@ export default async function AboutUs() {
     >
       <div className="flex flex-col w-full lg:max-w-[475px]">
         <h2 className="text-3xl text-[#4E4E4E] font-medium mb-8">About Us</h2>
-        <p className="text-[52px] font-semibold text-black leading-tight mb-6 lg:max-w-[450px]">
+        <p className="text-[42px] md:text-[52px] font-semibold text-black leading-tight mb-6 lg:max-w-[450px]">
           We Put Our Passion Into Every Frame
         </p>
-        <p className="text-2xl text-[#4E4E4E] mb-8">
+        <p className="text-sm md:text-2xl text-[#4E4E4E] mb-8">
           We believe that every frame holds magic and power to inspire,
           entertain, and tell stories.
         </p>
         <div className="">
-          <button className="flex bg-black text-white py-4 px-6 rounded-full gap-4">
+          <button className="flex bg-black text-white py-2 px-4 md:py-4 md:px-6 rounded-full gap-4">
             <span>See more</span>{" "}
             <FaArrowRightLong size={24} className="text-white" />
           </button>

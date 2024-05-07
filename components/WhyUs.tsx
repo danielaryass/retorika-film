@@ -13,8 +13,8 @@ export default async function WhyUs() {
         <span className="block">
           <GiFilmProjector className="text-[60px]" />
         </span>
-        <h2 className="text-[52px] font-semibold">Why Us</h2>
-        <p className="text-xl text-[#4E4E4E] text-center">
+        <h2 className="text-[42px] md:text-[52px] font-semibold">Why Us</h2>
+        <p className="text-sm md:text-xl text-[#4E4E4E] text-center">
           Your satisfaction is our commitment in every production.
         </p>
       </div>
