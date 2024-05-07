@@ -127,17 +127,17 @@ export default function HeroSection() {
                 // transition={{ duration: 2 }}
                 className="space-y-4 lg:my-20"
               >
-                <h2 className="text-[32px] lg:text-[72px] font-semibold text-white">
+                <h2 className="text-[32px] lg:text-[62px] font-semibold text-white">
                   {data[heroActive].title}
                 </h2>
                 {data[heroActive].type === "showcast" ? null : (
-                  <p className="text-2xl lg:text-[32px] text-white ">
+                  <p className="text-2xl lg:text-3xl text-white ">
                     {data[heroActive].tagline}
                   </p>
                 )}
                 <div className="pb-6">
                   <p
-                    className={`text-base md:text-2xl text-[#d3d3d4] line-clamp-3 ${
+                    className={`text-base md:text-xl text-[#d3d3d4] line-clamp-3 ${
                       data[heroActive].image_2
                         ? "2xl:max-w-[650px] lg:max-w-[550px]"
                         : "max-w-[800px]"
@@ -147,7 +147,7 @@ export default function HeroSection() {
                   </p>
                   <a
                     href={`${data[heroActive].link}`}
-                    className="text-white md:text-2xl font-bold"
+                    className="text-white md:text-xl font-bold"
                   >
                     Read more
                   </a>
