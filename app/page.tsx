@@ -19,10 +19,12 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+ 
   return (
     <main className="flex flex-col gap-36 md:gap-60">
       <Navbar />
       <Suspense fallback={<Loading/>}>
+      
       <HeroSection />
       </Suspense>
       <AboutUs />

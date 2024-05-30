@@ -215,3 +215,5 @@ export default function HeroSection() {
     </div>
   );
 }
+
+HeroSection.isProtected = true;
